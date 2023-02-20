@@ -1,0 +1,156 @@
+
+
+<body>
+
+    <main>
+        <h1 class="text-center" style="padding-top:3%">
+            The Battle Ground
+        </h1>
+
+        <!-- This is my play chart so the players know what actions beat what -->
+        <div style="padding-top:0.8%">
+            <img src="../../assets/images/chart_copy.png" alt="Play Chart" class="center" height="360" width="350">
+        </div>
+
+        <div style="text-align:center; padding-top:2%; padding-bottom:2%">
+            <span>Welcome to the battle ground. Here, your might and wit will be tested.
+                  You and your opponent will take turns entering your actions by doing the
+                  appropriate hand gestures in front of your web camera. The winner gets decided based on
+                  the above chart.
+            </span>
+        </div>
+        
+
+        <!-- This row has all my playable action images -->
+        <div class="row">
+            <div class="column">
+              <img src="../../assets/images/rock.png" alt="Rock" style="width:100%; height:80%">
+            </div>
+            <div class="column">
+              <img src="../../assets/images/paper.png" alt="Paper" style="width:100%; height:70%">
+            </div>
+            <div class="column">
+              <img src="../../assets/images/scissors.png" alt="Scissors" style="width:100%; height:80%">
+            </div>
+            <div class="column">
+                <img src="../../assets/images/lizard.png" alt="Lizard" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="../../assets/images/guns.png" alt="Gun" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="../../assets/images/wizard.png" alt="Wizard" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="../../assets/images/ogre.png" alt="Ogre" style="width:100%; height:90%">
+            </div>
+        </div>
+
+        <!-- This row has descriptions for each of my playable actions -->
+        <div class="row">
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Rock</strong> </span> <br>
+                    <p style="font-size:11px"> One Closed Hand </p>
+                </div> 
+            </div>
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Paper</strong> </span> <br>
+                    <p style="font-size:11px"> One Open Hand </p>
+                </div> 
+            </div>
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Scissors</strong> </span> <br>
+                    <p style="font-size:11px"> One Hand Pointing </p>
+                </div> 
+            </div>
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Lizard</strong> </span> <br>
+                    <p style="font-size:11px"> One Hand Pinched </p>
+                </div> 
+            </div>
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Gun</strong> </span> <br>
+                    <p style="font-size:11px"> Two Hands Pointing </p>
+                </div> 
+            </div>
+
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Wizard</strong> </span> <br>
+                    <p style="font-size:11px"> One Open Hand and One Closed Hand </p>
+                </div> 
+            </div>
+            
+            <div class="column2">
+                <div style="text-align:center">
+                    <span> <strong>Ogre</strong> </span> <br>
+                    <p style="font-size:11px"> One Hand Pointing and One Closed Hand </p>
+                </div> 
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="column3">
+                <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+                
+            </div>
+
+            <div class="column3">
+                <img [src]="imageURL" alt="Gun" style="width:100%">
+                
+                <div style="text-align:center">
+                    <div [innerHTML]="gesture"></div>
+                    <div style="padding-top:6%">
+                        <button type="button" class="btn btn-primary" (click)="actionSubmitted()">{{playerTurn}} Go!</button>
+                    </div>
+                    <div [innerHTML]="errorMsg"></div>
+                </div>
+
+                
+            </div>
+
+            <div class="column3">
+
+                <div style="text-align:center">
+                    <img src="../../assets/images/battle.png" alt="Battle" style="width:89%">
+                    <div style="padding-top:6%">
+                        
+                        <button type="button" class="btn btn-primary" (click)="calculateResults()">Battle!</button>
+                        <div [innerHTML]="errorMsg2"></div>
+                    </div>
+                    <div [innerHTML]="whoWon"></div>
+                </div>
+
+            </div>
+
+            <div class="column3">
+                <img src="../../assets/images/hands.png" alt="Two Open Hands" style="width:85%">
+                <div style="text-align:center">
+                    <span> <strong>Two Open Hands</strong> </span> <br>
+                    <p style="font-size:11px"> Erase your answer after submitting so your opponent doesn't see! </p>
+                </div> 
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+<!-- This holds my background music -->
+<footer>
+    <div style="padding-top: 4%; display: flex; justify-content: flex-end">
+        <audio controls loop id="myaudio"><source src="../../assets/music/bgm.mp3" type="audio/mpeg" /></audio>
+    </div>
+</footer>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+/* Handles css for columns in battle ground page */
+.column {
+    float: left;
+    width: 14.2857%;
+    padding: 5px;
+}
+
+.column2 {
+    float: left;
+    width: 14.2857%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+.column3 {
+    float: left;
+    width: 25%;
+    display:block;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Navbar coloring css */
+.navbar{
+    background-image:linear-gradient(135deg, hsl(225, 29%, 22%), hsl(196, 8%, 56%));
+}
